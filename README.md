@@ -2,8 +2,6 @@
 
 An end-to-end movie recommendation system built for a streaming platform scenario. The project covers the full machine learning lifecycle: data collection, preprocessing, feature engineering, model training, offline evaluation, online monitoring, inference serving, testing, containerization, and CI/CD.
 
-This repository was developed as part of Carnegie Mellon University's Machine Learning in Production course by team `Pulp Predictions`.
-
 ## Executive Summary
 
 This project demonstrates how to take a recommender system beyond a modeling notebook and turn it into a more complete ML product. Instead of stopping at offline experimentation, the repository includes:
@@ -219,8 +217,8 @@ The raw data comes from two sources:
 
 The repository includes:
 
-- [`data_collection.ipynb`](/c:/Personal/Aravinda%20Stuff/CMU/3rd%20semester/Machine%20Learning%20in%20Production/AI-Movie-Recommendation-System/data_collection.ipynb)
-- [`movie_recommendation_system/data_collection_refactored.py`](/c:/Personal/Aravinda%20Stuff/CMU/3rd%20semester/Machine%20Learning%20in%20Production/AI-Movie-Recommendation-System/movie_recommendation_system/data_collection_refactored.py)
+- [`data_collection.ipynb`]
+- [`movie_recommendation_system/data_collection_refactored.py`]
 
 The collection workflow aggregates minute-level events into user-movie interactions such as total watch time, which is later used as implicit feedback.
 
@@ -232,7 +230,7 @@ The offline pipeline loads three core datasets:
 - movies
 - interactions
 
-[`movie_recommendation_system/data_loader.py`](/c:/Personal/Aravinda%20Stuff/CMU/3rd%20semester/Machine%20Learning%20in%20Production/AI-Movie-Recommendation-System/movie_recommendation_system/data_loader.py) performs:
+[`movie_recommendation_system/data_loader.py`] performs:
 
 - CSV loading with multiple encoding fallbacks
 - required-column validation
@@ -241,7 +239,7 @@ The offline pipeline loads three core datasets:
 
 ### 3. Data Preprocessing
 
-[`movie_recommendation_system/data_preprocessor.py`](/c:/Personal/Aravinda%20Stuff/CMU/3rd%20semester/Machine%20Learning%20in%20Production/AI-Movie-Recommendation-System/movie_recommendation_system/data_preprocessor.py) cleans and filters the data by:
+[`movie_recommendation_system/data_preprocessor.py`] cleans and filters the data by:
 
 - removing duplicates
 - filtering invalid user ages and gender values
@@ -254,7 +252,7 @@ The offline pipeline loads three core datasets:
 
 ### 4. Feature Engineering
 
-[`movie_recommendation_system/feature_engineer.py`](/c:/Personal/Aravinda%20Stuff/CMU/3rd%20semester/Machine%20Learning%20in%20Production/AI-Movie-Recommendation-System/movie_recommendation_system/feature_engineer.py) creates the main training signal used by the production model.
+[`movie_recommendation_system/feature_engineer.py`] creates the main training signal used by the production model.
 
 The key idea is a **hybrid rating**:
 
@@ -276,7 +274,7 @@ The repo includes two recommendation approaches:
 
 #### Primary model: SVD
 
-[`movie_recommendation_system/svd_model_trainer.py`](/c:/Personal/Aravinda%20Stuff/CMU/3rd%20semester/Machine%20Learning%20in%20Production/AI-Movie-Recommendation-System/movie_recommendation_system/svd_model_trainer.py) trains a `TruncatedSVD`-based recommender on the user-item matrix built from hybrid ratings.
+[`movie_recommendation_system/svd_model_trainer.py`] trains a `TruncatedSVD`-based recommender on the user-item matrix built from hybrid ratings.
 
 Notable training behavior:
 
@@ -304,7 +302,7 @@ ALS remains useful as a backup path in the serving layer so the system can degra
 
 ### 6. Offline Evaluation
 
-[`movie_recommendation_system/model_evaluator.py`](/c:/Personal/Aravinda%20Stuff/CMU/3rd%20semester/Machine%20Learning%20in%20Production/AI-Movie-Recommendation-System/movie_recommendation_system/model_evaluator.py) evaluates the model beyond simple accuracy.
+[`movie_recommendation_system/model_evaluator.py`] evaluates the model beyond simple accuracy.
 
 Implemented evaluation areas include:
 
@@ -319,7 +317,7 @@ Implemented evaluation areas include:
 
 ### 7. Data Quality and Drift Monitoring
 
-[`movie_recommendation_system/data_quality.py`](/c:/Personal/Aravinda%20Stuff/CMU/3rd%20semester/Machine%20Learning%20in%20Production/AI-Movie-Recommendation-System/movie_recommendation_system/data_quality.py) adds production-oriented checks for:
+[`movie_recommendation_system/data_quality.py`] adds production-oriented checks for:
 
 - schema validation
 - datatype validation
@@ -328,11 +326,11 @@ Implemented evaluation areas include:
 - baseline creation
 - numerical and categorical drift detection
 
-The main pipeline writes reports and pipeline summaries to [`movie_recommendation_system/reports`](/c:/Personal/Aravinda%20Stuff/CMU/3rd%20semester/Machine%20Learning%20in%20Production/AI-Movie-Recommendation-System/movie_recommendation_system/reports).
+The main pipeline writes reports and pipeline summaries to [`movie_recommendation_system/reports`].
 
 ### 8. Online Monitoring
 
-[`movie_recommendation_system/online_monitor.py`](/c:/Personal/Aravinda%20Stuff/CMU/3rd%20semester/Machine%20Learning%20in%20Production/AI-Movie-Recommendation-System/movie_recommendation_system/online_monitor.py) analyzes telemetry from Kafka and produces online evaluation outputs such as:
+[`movie_recommendation_system/online_monitor.py`] analyzes telemetry from Kafka and produces online evaluation outputs such as:
 
 - click-through rate
 - precision@k from observed interactions
@@ -346,12 +344,12 @@ The main pipeline writes reports and pipeline summaries to [`movie_recommendatio
 
 Generated artifacts already present in the repo include:
 
-- [`movie_recommendation_system/reports/online_evaluation_dashboard.png`](/c:/Personal/Aravinda%20Stuff/CMU/3rd%20semester/Machine%20Learning%20in%20Production/AI-Movie-Recommendation-System/movie_recommendation_system/reports/online_evaluation_dashboard.png)
-- [`movie_recommendation_system/reports/online_evaluation_report.txt`](/c:/Personal/Aravinda%20Stuff/CMU/3rd%20semester/Machine%20Learning%20in%20Production/AI-Movie-Recommendation-System/movie_recommendation_system/reports/online_evaluation_report.txt)
+- [`movie_recommendation_system/reports/online_evaluation_dashboard.png`]
+- [`movie_recommendation_system/reports/online_evaluation_report.txt`]
 
 ## Inference Service
 
-The production-style API lives in [`Inference Service/server.py`](/c:/Personal/Aravinda%20Stuff/CMU/3rd%20semester/Machine%20Learning%20in%20Production/AI-Movie-Recommendation-System/Inference%20Service/server.py).
+The production-style API lives in [`Inference Service/server.py`]
 
 It is a Flask service that:
 
@@ -397,7 +395,7 @@ This project is not just model code. It includes infrastructure pieces expected 
 
 ### Docker
 
-[`Inference Service/Dockerfile`](/c:/Personal/Aravinda%20Stuff/CMU/3rd%20semester/Machine%20Learning%20in%20Production/AI-Movie-Recommendation-System/Inference%20Service/Dockerfile) packages the inference service into a container that:
+[`Inference Service/Dockerfile`] packages the inference service into a container that:
 
 - installs service dependencies
 - copies model artifacts into the image
@@ -406,7 +404,7 @@ This project is not just model code. It includes infrastructure pieces expected 
 
 ### CI/CD
 
-[`\.github/workflows/ci.yml`](/c:/Personal/Aravinda%20Stuff/CMU/3rd%20semester/Machine%20Learning%20in%20Production/AI-Movie-Recommendation-System/.github/workflows/ci.yml) automates several steps:
+[`\.github/workflows/ci.yml`] automates several steps:
 
 - run pipeline tests
 - install pipeline dependencies
@@ -418,7 +416,7 @@ This project is not just model code. It includes infrastructure pieces expected 
 
 ### Load Testing
 
-[`Inference Service/load_test/load_test.py`](/c:/Personal/Aravinda%20Stuff/CMU/3rd%20semester/Machine%20Learning%20in%20Production/AI-Movie-Recommendation-System/Inference%20Service/load_test/load_test.py) simulates traffic against the running API.
+[`Inference Service/load_test/load_test.py`] simulates traffic against the running API.
 
 Included load test results show:
 
@@ -427,7 +425,7 @@ Included load test results show:
 - average latency of about `115.94 ms`
 - `99.7%` of responses under `600 ms`
 
-See [`Inference Service/load_test/load_test_summary.txt`](/c:/Personal/Aravinda%20Stuff/CMU/3rd%20semester/Machine%20Learning%20in%20Production/AI-Movie-Recommendation-System/Inference%20Service/load_test/load_test_summary.txt).
+See [`Inference Service/load_test/load_test_summary.txt`].
 
 ## Representative Outputs
 
@@ -444,7 +442,7 @@ Testing is split across the pipeline and service layers.
 
 ### Pipeline Tests
 
-[`movie_recommendation_system/test_pipeline.py`](/c:/Personal/Aravinda%20Stuff/CMU/3rd%20semester/Machine%20Learning%20in%20Production/AI-Movie-Recommendation-System/movie_recommendation_system/test_pipeline.py) covers:
+[`movie_recommendation_system/test_pipeline.py`] covers:
 
 - configuration
 - data loading
@@ -458,7 +456,7 @@ Testing is split across the pipeline and service layers.
 
 ### Service Tests
 
-[`Inference Service/test_service.py`](/c:/Personal/Aravinda%20Stuff/CMU/3rd%20semester/Machine%20Learning%20in%20Production/AI-Movie-Recommendation-System/Inference%20Service/test_service.py) verifies:
+[`Inference Service/test_service.py`] verifies:
 
 - root health endpoint
 - detailed health endpoint
@@ -467,7 +465,7 @@ Testing is split across the pipeline and service layers.
 - unsupported HTTP methods
 - missing routes
 
-Coverage reports and testing artifacts are stored under [`movie_recommendation_system/reports/testing`](/c:/Personal/Aravinda%20Stuff/CMU/3rd%20semester/Machine%20Learning%20in%20Production/AI-Movie-Recommendation-System/movie_recommendation_system/reports/testing).
+Coverage reports and testing artifacts are stored under [`movie_recommendation_system/reports/testing`].
 
 ## Engineering Challenges Addressed
 
@@ -604,15 +602,3 @@ This project highlights experience in:
 - testing strategy for ML pipelines
 - production monitoring and telemetry analysis
 - Docker-based deployment workflows
-
-## Team
-
-- Aravinda Boovaraghavan
-- Meghna Nair
-- Monish Kamtikar
-- Sarah Lang
-- Adam Rakab
-
-## License
-
-This project is licensed under the MIT License. See [`LICENSE`](/c:/Personal/Aravinda%20Stuff/CMU/3rd%20semester/Machine%20Learning%20in%20Production/AI-Movie-Recommendation-System/LICENSE).
