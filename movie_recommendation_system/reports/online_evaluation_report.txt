@@ -1,0 +1,73 @@
+================================================================================
+ONLINE EVALUATION REPORT - MOVIE RECOMMENDATION SYSTEM
+================================================================================
+Report Generated: 2025-10-27 20:21:55
+
+DATA SUMMARY:
+  * Recommendation Requests: 63
+  * User Interactions: 9935
+  * Unique Users (Interactions): 9924
+  * Date Range: 2025-10-28 00:21:36.498820844 to 2025-10-28 00:21:45.864203608
+
+ACCURACY METRICS:
+  * Click-Through Rate: 0.09%
+  * Precision@10: 0.100
+  * Total Recommendations Served: 1089
+  * Total User Clicks (on recommended items): 1
+
+PERFORMANCE METRICS:
+  * Average Response Time: 266.06ms
+  * Median Response Time: 150.00ms
+  * P95 Response Time: 855.90ms
+  * P99 Response Time: 895.28ms
+
+MODEL USAGE:
+  * 17645-team06.isri.cmu.edu:8082: 63 requests (100.0%)
+  * Fallback Rate: 0.00%
+
+USER ENGAGEMENT:
+  * Total Unique Users: 9924
+  * Total Unique Movies: 2143
+
+================================================================================
+MODEL QUALITY ASSESSMENT (Attribution-Free Metrics)
+================================================================================
+
+DIVERSITY:
+  * Unique movies recommended: 27
+  * Total recommendation slots: 1089
+  * Diversity ratio: 0.025
+  * Note: Low diversity suggests cold-start or popularity bias
+
+CATALOG COVERAGE:
+  * Movies clicked by users: 2131
+  * Movies in recommendations: 27
+  * Overlap: 23 movies
+  * Coverage: 1.1%
+  * Note: High coverage means recommendations include popular movies
+
+POPULARITY BIAS:
+  * Unique movies: 27
+  * Top-10 concentration: 49.6%
+  * Most recommended: schindlers list 1993
+  * Times recommended: 54
+  * Note: 49.6% of recommendations are top-10 movies
+
+PERSONALIZATION:
+  * Users evaluated: 63
+  * Avg user similarity: 0.948
+  * Personalization score: 0.052
+  * Note: Recommendations are 5.2% personalized
+
+TEMPORAL CONSISTENCY:
+  * Early period movies: 26
+  * Late period movies: 23
+  * Consistency score: 0.815
+  * Note: High consistency may indicate static recommendations
+
+================================================================================
+RECOMMENDATIONS:
+  - Consider optimizing response times
+  - Model fallback rate is acceptable
+
+================================================================================

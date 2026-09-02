@@ -1,0 +1,17 @@
+SVD RECOMMENDATION SERVICE LOAD TEST SUMMARY
+================================================================================
+
+Test Date: 2025-09-28 23:23:06
+Target: http://localhost:8082
+Total Requests: 2,000
+Successful: 2,000 (100.0%)
+Failed: 0 (0.0%)
+Timeouts: 0
+
+Average Response Time: 115.94ms
+Min Response Time: 0.56ms
+Max Response Time: 909.27ms
+Under 600ms: 1,993 (99.7%)
+
+Status Code Breakdown:
+  200: 2,000 (100.0%)

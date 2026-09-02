@@ -1,0 +1,53 @@
+# Movie Recommendation System Requirements - Milestone 2
+# Core dependencies for pipeline functionality + testing infrastructure
+# Updated to match actual installed versions
+
+# Data processing and machine learning
+pandas==2.3.3
+numpy==2.2.6
+scikit-learn==1.7.2
+scipy==1.15.3
+
+# Configuration and logging
+python-dotenv>=0.19.0
+
+# File handling and serialization
+pickle5>=0.0.12; python_version < "3.8"
+
+# Testing framework and coverage
+pytest==8.4.2
+pytest-cov==7.0.0
+pytest-mock==3.15.1
+pytest-xdist==3.8.0
+coverage==7.11.0
+
+# Code quality and formatting
+black==25.9.0
+isort==7.0.0
+flake8==7.3.0
+bandit==1.8.6
+
+# Performance monitoring
+memory-profiler==0.61.0
+psutil==7.1.2
+line-profiler==5.0.0
+
+# Web framework for API
+Flask==3.1.2
+requests==2.32.5
+
+# Message queue
+kafka-python==2.2.15
+
+# Visualization
+matplotlib==3.10.7
+seaborn==0.13.2
+
+# Utilities
+tqdm==4.67.1
+click==8.3.0
+rich==14.2.0
+PyYAML==6.0.3
+
+# Development dependencies
+colorama==0.4.6

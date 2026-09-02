@@ -1,0 +1,37 @@
+# Core ML and data processing libraries
+pandas==2.3.3
+numpy==2.2.6
+scikit-learn==1.7.2
+scipy==1.15.3
+matplotlib==3.10.7
+seaborn==0.13.2
+
+# Web framework for API
+flask==3.1.2
+requests==2.32.5
+kafka-python==2.2.15
+
+# Testing and code quality
+pytest==8.4.2
+pytest-cov==7.0.0
+pytest-mock==3.15.1
+pytest-xdist==3.8.0
+coverage==7.11.0
+
+# Code formatting and linting
+black==25.9.0
+flake8==7.3.0
+isort==7.0.0
+bandit==1.8.6
+tqdm==4.67.1
+
+# Development and debugging
+memory-profiler==0.61.0
+line-profiler==5.0.0
+
+# Additional utilities
+psutil==7.1.2
+rich==14.2.0
+PyYAML==6.0.3
+click==8.3.0
+colorama==0.4.6
