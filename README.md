@@ -1,8 +1,8 @@
-# AI Movie Recommendation System
+# AI Movie Recommender System
 
 An end-to-end movie recommendation system built for a streaming platform scenario. The project covers the full machine learning lifecycle: data collection, preprocessing, feature engineering, model training, offline evaluation, online monitoring, inference serving, testing, containerization, and CI/CD.
 
-## Executive Summary
+## Summary
 
 This project demonstrates how to take a recommender system beyond a modeling notebook and turn it into a more complete ML product. Instead of stopping at offline experimentation, the repository includes:
 
